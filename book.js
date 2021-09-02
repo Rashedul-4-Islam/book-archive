@@ -15,7 +15,6 @@ const getSearchValue = () =>{
       .then(data => bookDetails(data))
     } 
 }  
-
        /*============ error show  =================*/
 const displayError = () =>{
   document.getElementById('error-message').style.display = 'block';
@@ -43,6 +42,7 @@ const bookDetails = books =>{
         bookData.forEach(book => {
          
             const div = document.createElement('div');
+            /* ============ using inside medium image url   =========*/
             div.innerHTML = `
             <div class="card border border-dark cardShadow" style="width: 22rem; height:510px;">
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top " style="height:300px" alt="...">
