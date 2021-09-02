@@ -8,5 +8,5 @@
 .cardShadow{
     border-radius: 5px;
     box-shadow: 2px 10px 20px rgb(44, 39, 39);
-    overflow: scroll;
+    /* overflow: scroll; */
 }
