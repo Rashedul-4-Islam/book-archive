@@ -11,21 +11,21 @@
 <body>
     <header>
         <h2 class="text-center fw-bold mt-3">Best <span class="text-warning">Book</span> Archive</h2>
-        
     </header>
 
     <main>
         <section>
+                <!--============= search-box =============-->
             <div class="container text-center d-flex w-50">
                 <input id="input-field" class="form-control" type="text" placeholder="Search your Favourite Books">
                 <button onclick="getSearchValue()" id="search-field" class="btn btn-danger ms-1">Search</button>
             </div>
         </section>
-        
+           <!--=============== error warning ===========-->
         <div>
-            <h2 id="error-message" class="bg-dark text-center text-light mt-3 p-3">Invaild your input</h2>
+            <h2 id="error-message" class="bg-danger text-center text-light mt-3 p-3">Insert a valid input</h2>
         </div>
-        
+             <!--====== per search get total book  ============-->
         <section >
             <hr>
             <div id="information" class="container text-center">
@@ -33,9 +33,9 @@
             </div>
             <hr>
         </section>
-
+                <!--================ book Archive  ===============-->
         <section>
-            <div id="response-part" class="text-center demo">
+            <div id="show-details" class="text-center grid">
                 
            </div>
         </section>
