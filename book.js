@@ -51,9 +51,9 @@ const bookDetails = books =>{
               <h5 class="card-title p-3"><span class="fw-bold text-warning">Book-Name :</span> ${book.title}</h5>
             </div>
             <ul class="list-group list-group-flush">
-            <li class="list-group-item fw-bold"><span class="fw-bold text-danger">Author-Name :</span> ${book.author_name ? book.author_name[0]:"undefine"}</li>
-              <li class="list-group-item"><span class="fw-bold text-primary">Publisher-Name</span>: ${book.publisher ? book.publisher[0]:'undefine'}</li>
-              <li class="list-group-item"><span class="fw-bold text-secondary">First Publish-Date</span>: ${book.publish_date ? book.publish_date[0]:"undefine"}</li> 
+            <li class="list-group-item fw-bold"><span class="fw-bold text-danger">Author-Name :</span> ${book.author_name ? book.author_name[0]:"Sorry Can't find Author Name"}</li>
+              <li class="list-group-item"><span class="fw-bold text-primary">Publisher-Name</span>: ${book.publisher ? book.publisher[0]:"Sorry Can't find Publisher"}</li>
+              <li class="list-group-item"><span class="fw-bold text-secondary">First Publish-Date</span>: ${book.publish_date ? book.publish_date[0]:"Can't Find Date"}</li> 
             </ul>
           </div>
           `;
