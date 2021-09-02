@@ -53,7 +53,7 @@ const bookDetails = books =>{
             <ul class="list-group list-group-flush">
             <li class="list-group-item fw-bold"><span class="fw-bold text-danger">Author-Name :</span> ${book.author_name}</li>
               <li class="list-group-item"><span class="fw-bold text-primary">Publisher-Name</span>: ${book.publisher}</li>
-              <li class="list-group-item"><span class="fw-bold text-secondary">Publisher-Date</span>: ${book.publish_date}</li> 
+              <li class="list-group-item"><span class="fw-bold text-secondary">First Publish-Date</span>: ${book.publish_date[0]}</li> 
             </ul>
           </div>
           `;
