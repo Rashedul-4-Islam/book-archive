@@ -1,9 +1,21 @@
+const errorMessage = document.getElementById('error-message').style.display = 'none';
+
 const getSearchValue = () =>{
-    const inputField = document.getElementById('input-field').value;
-    inputField.textContent = "";
-    fetch(`https://openlibrary.org/search.json?q=${inputField}`)
-    .then(res => res.json())
-    .then(data => bookImage(data))
+    const inputField = document.getElementById('input-field');
+    const inputCheck = inputField.value
+    inputField.value = '';
+    if(inputCheck === ''){
+         displayError()
+    }else{
+      fetch(`https://openlibrary.org/search.json?q=${inputCheck}`)
+      .then(res => res.json())
+      .then(data => bookImage(data))
+    }
+   
+}
+
+const displayError = () =>{
+  document.getElementById('error-message').style.display = 'block';
 }
 
 const bookImage = books =>{
@@ -20,26 +32,33 @@ const bookImage = books =>{
       informationField.appendChild(h3)
       // console.log(bookData);
       bookData.forEach(book => {
-          let responsePart = document.getElementById('response-part');
+          const demoFive = `${book.title}`;
+          // console.log(demoFive);
+         
+            let responsePart = document.getElementById('response-part');
             const div = document.createElement('div');
             div.innerHTML = `
             <div class="card border border-dark cardShadow" style="width: 18rem;height:25rem;">
             <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg" class="card-img-top " style="height:300px" alt="...">
             <div class="card-body">
               <h5 class="card-title">Book-Name: ${book.title}</h5>
-              <h6 class="card-text">Author-Name: ${book.author_name}</h6>
+             
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Publisher-Name: ${book.publisher}</li>
-              <li class="list-group-item">Publish-Date: ${book.publish_date}</li> 
+            <li class="list-group-item fw-bold">Author-Name: ${book.author_name[0]}</li>
+              <li class="list-group-item">Publisher-Name: ${book.publisher[0]}</li>
+              <li class="list-group-item">Publish-Date: ${book.publish_date[0]}</li> 
             </ul>
           </div>
           `;
             // console.log(div);
             responsePart.appendChild(div);
+          
+         
       })
       
 }
 
 
 // <li class="list-group-item">Language: ${book.language}</li>
+ // <h6 class="card-text"></h6>
